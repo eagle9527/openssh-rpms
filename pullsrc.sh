@@ -20,7 +20,7 @@ arg1="${1:-}"
 # allow command fail:
 # fail_command || true
 
-source version.env	
+source ./version.env	
 
 # OPENSSHMIR=https://mirrors.aliyun.com/openssh/portable
 OPENSSHMIR=https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable
