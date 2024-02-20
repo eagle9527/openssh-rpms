@@ -1,5 +1,6 @@
 #!/bin/bash
-#set -e
+set -e
+
 #判断系统版本
 OSVERSION="CentOS Linux release 7.9.2009 (Core)"
 VERSION=`cat /etc/redhat-release`
