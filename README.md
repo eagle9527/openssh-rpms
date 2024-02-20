@@ -37,6 +37,10 @@ yum install -y imake rpm-build pam-devel krb5-devel zlib-devel libXt-devel libX1
 # 4. Run the script to build RPMs. 
 ./compile.sh
 # For CentOS 5, the default rpmbuild didn't set the variable of `${dist}`, manually run the script with argument `./compile.sh el5`
+
+# 5. Update OpenSSh
+sh -x  update_ssh.sh
+
 ```
 
 ## Security
