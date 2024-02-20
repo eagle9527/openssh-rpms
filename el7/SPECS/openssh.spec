@@ -305,6 +305,7 @@ install -d $RPM_BUILD_ROOT/etc/rc.d/init.d
 install -d $RPM_BUILD_ROOT%{_libexecdir}/openssh
 install -m644 %{SOURCE2}     $RPM_BUILD_ROOT/etc/pam.d/sshd
 install -m755 contrib/redhat/sshd.init $RPM_BUILD_ROOT/etc/rc.d/init.d/sshd
+install -m755 contrib/ssh-copy-id $RPM_BUILD_ROOT/usr/bin/ssh-copy-id
 
 %if ! %{no_x11_askpass}
 install x11-ssh-askpass-%{aversion}/x11-ssh-askpass $RPM_BUILD_ROOT%{_libexecdir}/openssh/x11-ssh-askpass
@@ -387,6 +388,7 @@ fi
 %attr(0755,root,root) %{_bindir}/ssh-keygen
 %attr(0644,root,root) %{_mandir}/man1/ssh-keygen.1*
 %attr(0755,root,root) %dir %{_libexecdir}/openssh
+%attr(0755,root,root) %{_bindir}/ssh-copy-id
 %attr(4711,root,root) %{_libexecdir}/openssh/ssh-keysign
 %attr(0755,root,root) %{_libexecdir}/openssh/ssh-pkcs11-helper
 %attr(0755,root,root) %{_libexecdir}/openssh/ssh-sk-helper
