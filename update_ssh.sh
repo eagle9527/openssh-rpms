@@ -2,7 +2,6 @@
 #set -e
 #判断系统版本
 OSVERSION="CentOS Linux release 7.9.2009 (Core)"
-cat /etc/os-release
 VERSION=`cat /etc/redhat-release`
 if [ "$VERSION" != "$OSVERSION" ];then
     echo "------  $VERSION Version Mismatch $OSVERSION ------"
@@ -24,7 +23,7 @@ fi
 
 
 #安装新版本 openssh
-yum localinstall  pkg/*.rpm -y
+yum localinstall  ./el7/RPMS/*.rpm -y
 
 if [ $? -ne 0 ]; then
     echo "------ upgradeSSH failed ------"
