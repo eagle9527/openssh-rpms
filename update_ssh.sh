@@ -24,7 +24,7 @@ fi
 
 
 #安装新版本 openssh
-yum localinstall  ./el7/RPMS/*.rpm -y
+yum localinstall  ./el7/RPMS/x86_64/*.rpm -y
 
 if [ $? -ne 0 ]; then
     echo "------ upgradeSSH failed ------"
