@@ -1,9 +1,9 @@
 #!/bin/bash
 #set -e
 #判断系统版本
-OSVERSION=""
+OSVERSION="CentOS Linux release 7.9.2009 (Core)"
 cat /etc/os-release
-VERSION=`cat /etc/os-release  |grep "VERSION="|awk  -F'"' '{print $2}'`
+VERSION=`cat /etc/redhat-release`
 if [ "$VERSION" != "$OSVERSION" ];then
     echo "------  $VERSION Version Mismatch $OSVERSION ------"
     exit 1
@@ -61,6 +61,7 @@ session    include      password-auth
 session    include      postlogin
 EOF
 
+chmod go-r /etc/ssh/*
 
 systemctl restart sshd
 if [ $? -ne 0 ]; then
